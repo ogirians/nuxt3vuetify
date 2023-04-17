@@ -1,0 +1,20 @@
+version: "3"
+services:
+  node:
+    image: "node:18.16.0-bullseye"
+    #build: .
+    user: "node"
+    working_dir: /app
+    environment:
+      - NODE_ENV=development
+    volumes:
+     - .:/app
+    ports:
+      - "3000:3000"
+      - "24678:24678"
+    command: "npm run dev --hot -- -o"
+    # command: "npx nuxi init <project-name>"
+    # command: "npm install"
+    # command: "yarn add @invictus.codes/nuxt-vuetify"
+    #command: "yarn dev -o"
+
