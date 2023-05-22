@@ -1,16 +1,17 @@
 <template>
   <div>
-    <v-container fluid class="mx-0 px-0 pt-0 mb-10">
+    <v-container fluid class="mx-0 px-0 pt-0 mb-6">
       <v-carousel
         :continuous="false"
         :show-arrows="false"
-        hide-delimiter-background
-        delimiter-icon="mdi mdi-cat"
+        hide-delimiter-background  
+        hide-delimiters      
         light
         height="400"
-        interval = "10000"
+        cycle  
+        itnterval="1000"    
         class="ma-0"
-
+        v-model="model"
       >
           <v-carousel-item
             class="mt-n16"
@@ -19,7 +20,13 @@
             :src="item.src"
             cover
           ></v-carousel-item>
-    </v-carousel>
+      </v-carousel>
+      <div class="text-center mt-5">
+        <v-icon @click="model = 0" :icon="model == 0 ? 'mdi-minus-thick' : 'mdi-square-small'"></v-icon>
+        <v-icon @click="model = 1" :icon="model == 1 ? 'mdi-minus-thick' : 'mdi-square-small'"></v-icon>
+        <v-icon @click="model = 2" :icon="model == 2 ? 'mdi-minus-thick' : 'mdi-square-small'"></v-icon>
+        <v-icon @click="model = 3" :icon="model == 3 ? 'mdi-minus-thick' : 'mdi-square-small'"></v-icon>
+      </div>
     </v-container>
     <v-container class="text-center mb-16">
         <h4 class="text-h5 text-md-h4 mb-2">
@@ -53,6 +60,7 @@ export default {
   },  
   data(){
     return {
+      model: 0,
       colorMode : useColorMode(),
       items: [
           {
