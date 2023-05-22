@@ -10,7 +10,7 @@ services:
     volumes:
      - .:/app
     ports:
-      - "3000:3000"
+      - "3001:3000"
       - "24678:24678"
     command: "npm run dev --hot -- -o"
     # command: "npx nuxi init <project-name>"

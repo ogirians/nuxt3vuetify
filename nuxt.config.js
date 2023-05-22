@@ -3,8 +3,18 @@ import colors from 'vuetify/lib/util/colors'
 
 export default defineNuxtConfig({
     modules: [
-        '@invictus.codes/nuxt-vuetify'
-      ],
+        '@invictus.codes/nuxt-vuetify',
+        '@nuxtjs/color-mode'
+    ],
+    css: [
+      // Load a Node.js module directly (here it's a Sass file).
+      // 'bulma',
+      // CSS file in the project
+      // '@/assets/css/main.css',
+      // SCSS file in the project
+      // '@/assets/css/main.scss'
+      'assets/bgcolor.css'
+    ],
     vuetify: {
       /* vuetify options */
       vuetifyOptions: {
@@ -18,9 +28,9 @@ export default defineNuxtConfig({
                 //green: '#00ff00' // cannot use primary color names here, so use a custom color name (such as 'greenish')
                 greenish: '#03DAC5',
                 // Workaround: Custom colors seem to erase default colors, so we need to include the default colors (of `light` or `dark` theme)
-                background: '#ccc',
+                background: '#212121',
                 surface: '#212121',
-                primary: colors.orange.darken3, 
+                primary: '#fb8c00', 
                 'primary-darken-1': '#3700B3',
                 secondary: colors.grey.lighten1,
                 'secondary-darken-1': '#03DAC5',

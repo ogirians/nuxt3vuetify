@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-container fluid class="mx-0 px-0 pt-0 mb-0">
+    <v-container fluid class="mx-0 px-0 pt-0 mb-10">
       <v-carousel
         :continuous="false"
         :show-arrows="false"
@@ -9,7 +9,7 @@
         light
         height="400"
         interval = "10000"
-        class="ma-0 mt-n16"
+        class="ma-0"
 
       >
           <v-carousel-item
@@ -33,7 +33,7 @@
     </v-container>
     <v-container class="text-center">
         <NuxtLink to="/home">
-          <v-btn class="rounded-lg" color="secondary" style ="text-transform: none;">
+          <v-btn class="rounded-lg" color="primary" style ="text-transform: none;">
             Masuk
           </v-btn>
         </NuxtLink>
@@ -45,12 +45,15 @@
 // import colors from 'vuetify/es5/util/colors';
 
 export default {
+  
   name: 'IndexPage',
   mounted(){
     // this.$store.commit('global/set_path', '/')
+    this.colorMode.preference = 'grey';
   },  
   data(){
     return {
+      colorMode : useColorMode(),
       items: [
           {
             src: '/pic/1.jpg',
