@@ -4,11 +4,11 @@ services:
     image: "node:18.16.0-bullseye"
     #build: .
     user: "node"
-    working_dir: /app
+    working_dir: /home/app
     environment:
       - NODE_ENV=development
     volumes:
-     - .:/app
+     - .:/home/app
     ports:
       - "3001:3000"
       - "24678:24678"

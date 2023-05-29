@@ -2,6 +2,10 @@
 import colors from 'vuetify/lib/util/colors'
 
 export default defineNuxtConfig({
+    app: {
+      pageTransition: { name: 'slide' , mode: 'out-in'},
+    },
+
     modules: [
         '@invictus.codes/nuxt-vuetify',
         '@nuxtjs/color-mode'
@@ -19,27 +23,26 @@ export default defineNuxtConfig({
       /* vuetify options */
       vuetifyOptions: {
         theme: {
-          defaultTheme: 'myCustomTheme',
+          dark: false,
+          defaultTheme: 'light',
           themes: {
-            myCustomTheme: {
+            light: {
               dark: false,
-              variables: {}, // ✅ this property is required to avoid Vuetify crash         
+              // variables: {}, // ✅ this property is required to avoid Vuetify crash         
               colors: {
-                //green: '#00ff00' // cannot use primary color names here, so use a custom color name (such as 'greenish')
-                greenish: '#03DAC5',
-                // Workaround: Custom colors seem to erase default colors, so we need to include the default colors (of `light` or `dark` theme)
-                background: '#212121',
-                surface: '#212121',
-                primary: '#fb8c00', 
+                background: '#FFFFFF',
+                surface: '#FFFFFF',
+                primary: '#6200EE',
                 'primary-darken-1': '#3700B3',
-                secondary: colors.grey.lighten1,
-                'secondary-darken-1': '#03DAC5',
-                error: '#CF6679',
+                secondary: colors.orange.darken1,
+                'secondary-darken-1': '#018786',
+                error: '#B00020',
                 info: '#2196F3',
                 success: '#4CAF50',
-                warning: '#FB8C00'
+                warning: '#FB8C00',
               },
-            }
+            },
+            
           }
         }
       },
